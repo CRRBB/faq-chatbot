@@ -1,0 +1,118 @@
+[
+  {
+    "question": "Why join Infomaniak?",
+    "answer": "By consolidating your domain names, websites, and email addresses with Infomaniak, you simplify the management of your invoices and services. Moreover, your domains will automatically link with your website and email address. You will therefore not need to manually configure the DNS of your domains with another registrar.",
+    "url": "https://faq.infomaniak.com/2057"
+  },
+  {
+    "question": "How to reset my email password?",
+    "answer": "To reset your email password: 1) Log into your Infomaniak Manager account, 2) Go to the Email Service section, 3) Select the email address you want to modify, 4) Click 'Change Password' and enter your new password, 5) Save the changes. Your new password will be active immediately. Remember to update the password in all your email applications and devices.",
+    "url": "https://faq.infomaniak.com/2075"
+  },
+  {
+    "question": "How to configure email on my phone?",
+    "answer": "To set up your Infomaniak email on your smartphone: 1) Open your phone's email app, 2) Add a new account and select 'Other' or 'IMAP', 3) Enter your full email address and password, 4) Use these server settings - IMAP: mail.infomaniak.com (port 993, SSL), SMTP: mail.infomaniak.com (port 587, STARTTLS), 5) Complete the setup. Your emails will sync automatically across all devices.",
+    "url": "https://faq.infomaniak.com/2076"
+  },
+  {
+    "question": "How to backup my emails?",
+    "answer": "Infomaniak automatically backs up your emails daily with our secure backup system. To access your backups: 1) Log into your Infomaniak Manager, 2) Go to Email Service > Backup, 3) Select the date range you need, 4) Download your backup files. We retain backups for 30 days on standard plans and up to 365 days on premium plans. You can also export emails directly from your email client for additional personal backups.",
+    "url": "https://faq.infomaniak.com/2077"
+  },
+  {
+    "question": "Use a valid email address",
+    "answer": "Ensure that your email address and its domain are correct and valid; check the security parameters of your domain. If you correct a parameter, wait 24 hours before trying to send again.",
+    "url": "https://faq.infomaniak.com/2059"
+  },
+  {
+    "question": "Avoid suspicious content",
+    "answer": "Whether in the subject line or the body of the email, avoid using words or phrases often associated with spam, generic messages, overly complex layouts, and unsafe or poorly formatted internet links. Personalizing an email by using the recipient's name enhances the legitimacy of your messages.",
+    "url": "https://faq.infomaniak.com/2060"
+  },
+  {
+    "question": "Test sending from the Infomaniak Web Mail app",
+    "answer": "If you send your messages from an email software/client, try using the Web app Mail Infomaniak (online service mail.infomaniak.com) to compare the results and more precisely identify the source of the spam issue.",
+    "url": "https://faq.infomaniak.com/2061"
+  },
+  {
+    "question": "Reputation of the custom domain",
+    "answer": "If you send emails from an address @domain.xyz and for some reason this domain has recently acquired a bad reputation, your email will be impacted and may be considered Spam by different providers. You need to address the reasons that led to the depreciation of your domain name.",
+    "url": "https://faq.infomaniak.com/2062"
+  },
+  {
+    "question": "Optimize the sending frequency",
+    "answer": "An excessive volume of emails sent to multiple recipients of the same provider may be considered spam. Respect a reasonable frequency when sending your emails.",
+    "url": "https://faq.infomaniak.com/2063"
+  },
+  {
+    "question": "Get added to Infomaniak's whitelist",
+    "answer": "If you regularly send emails to a recipient also hosted by Infomaniak, and your messages are suddenly considered Spam, your contact can add your email address to the whitelist to allow your mail to reach their normal inbox. However, it is important to pay attention to the reasons that led your messages to spam, as not everyone will be able to whitelist your address.",
+    "url": "https://faq.infomaniak.com/2064"
+  },
+  {
+    "question": "Automatic filtering methods",
+    "answer": "If you are facing a wave of spam or unusual messages, refer to this other guide to perform some checks.",
+    "url": "https://faq.infomaniak.com/2065"
+  },
+  {
+    "question": "Troubleshoot a connection issue",
+    "answer": "There is no need to contact Infomaniak Support (which does not have any of your passwords) if you follow the troubleshooting steps provided in our detailed connection guide.",
+    "url": "https://faq.infomaniak.com/2066"
+  },
+  {
+    "question": "In which case are the passwords unified?",
+    "answer": "Suppose that within the Mail Service that you own in your Infomaniak account, you create an email address named julie@entreprise-familiale.xyz (password 123-Abc).",
+    "url": "https://faq.infomaniak.com/2067"
+  },
+  {
+    "question": "Mandatory ports and parameters",
+    "answer": "When this is requested during a software or email application configuration, use only these parameters provided in our configuration guide.",
+    "url": "https://faq.infomaniak.com/2068"
+  },
+  {
+    "question": "Searching for and identifying the email error",
+    "answer": "When your message does not reach your recipient, an initial failure report (Temporary Delivery Failure Report) is sent and specifies that the server will attempt to resend your message several times.",
+    "url": "https://faq.infomaniak.com/2069"
+  },
+  {
+    "question": "Blocked by SPAM Filter (or Content Rejected)",
+    "answer": "The recipient's mail server has blocked the message due to anti-spam filtering rules. Check your message content and sending practices to avoid spam filters.",
+    "url": "https://faq.infomaniak.com/2070"
+  },
+  {
+    "question": "Domain Not Found (or DNS Error)",
+    "answer": "Solution: check the spelling of the recipient's domain and correct it if necessary; ensure that the domain name and DNS are valid and active.",
+    "url": "https://faq.infomaniak.com/2071"
+  },
+  {
+    "question": "Malware message rejected",
+    "answer": "This error occurs when the message contains an attachment, a link to a storage site like Dropbox, or dynamic content. You should try resending the message from the Web app Mail Infomaniak instead of a mail application, and remove any content that may cause this error.",
+    "url": "https://faq.infomaniak.com/2072"
+  },
+  {
+    "question": "Message Size Exceeded / File Too Large",
+    "answer": "These errors occur when the size of the message (or attachments) exceeds the limit allowed by the recipient's mail server. The Mailer Daemon will return an error report indicating that delivery failed due to the message size being exceeded.",
+    "url": "https://faq.infomaniak.com/2073"
+  },
+  {
+    "question": "The message contains a Unicode character in a disallowed header",
+    "answer": "This error may appear if you have inserted a special character like a heart ♥ in the body of the email, the subject or especially in the full name; the risk of being rejected by providers is very high: it is best to keep the use of signs, characters and fonts as simple as possible.",
+    "url": "https://faq.infomaniak.com/2074"
+  },
+  {
+    "question": "Pourquoi rejoindre Infomaniak ?",
+    "answer": "En regroupant vos noms de domaine, sites web et adresses email chez Infomaniak, vous simplifiez la gestion de vos factures et services. De plus, vos domaines seront automatiquement liés à votre site web et adresse email. Vous n'aurez donc pas besoin de configurer manuellement le DNS de vos domaines avec un autre registraire."
+  },
+  {
+    "question": "Comment réinitialiser mon mot de passe email ?",
+    "answer": "Pour réinitialiser votre mot de passe email : 1) Connectez-vous à votre compte Gestionnaire Infomaniak, 2) Allez dans la section Service Email, 3) Sélectionnez l'adresse email à modifier, 4) Cliquez sur 'Changer le mot de passe' et saisissez votre nouveau mot de passe, 5) Sauvegardez les modifications. Votre nouveau mot de passe sera actif immédiatement. N'oubliez pas de mettre à jour le mot de passe dans toutes vos applications et appareils email."
+  },
+  {
+    "question": "Comment configurer l'email sur mon téléphone ?",
+    "answer": "Pour configurer votre email Infomaniak sur votre smartphone : 1) Ouvrez l'application email de votre téléphone, 2) Ajoutez un nouveau compte et sélectionnez 'Autre' ou 'IMAP', 3) Saisissez votre adresse email complète et votre mot de passe, 4) Utilisez ces paramètres serveur - IMAP : mail.infomaniak.com (port 993, SSL), SMTP : mail.infomaniak.com (port 587, STARTTLS), 5) Terminez la configuration. Vos emails se synchroniseront automatiquement sur tous vos appareils."
+  },
+  {
+    "question": "Comment sauvegarder mes emails ?",
+    "answer": "Infomaniak sauvegarde automatiquement vos emails quotidiennement avec notre système de sauvegarde sécurisé. Pour accéder à vos sauvegardes : 1) Connectez-vous à votre Gestionnaire Infomaniak, 2) Allez dans Service Email > Sauvegarde, 3) Sélectionnez la plage de dates nécessaire, 4) Téléchargez vos fichiers de sauvegarde. Nous conservons les sauvegardes pendant 30 jours sur les plans standards et jusqu'à 365 jours sur les plans premium. Vous pouvez également exporter les emails directement depuis votre client email pour des sauvegardes personnelles supplémentaires."
+  }
+]
