@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infomaniak FAQ Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="homepage">
+        <!-- Header Section -->
+        <header class="hero">
+            <div class="container">
+                <h1>🤖 Infomaniak FAQ Assistant</h1>
+                <p class="tagline">Get instant answers to your questions about Infomaniak services</p>
+                <div class="features">
+                    <span class="feature">✅ Bilingual Support</span>
+                    <span class="feature">✅ 24/7 Available</span>
+                    <span class="feature">✅ Instant Responses</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="/chat" class="btn-primary">Try Full Chat</a>
+                    <button onclick="openChatPlugin()" class="btn-secondary">Plugin Demo</button>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="/fr" style="color: white; text-decoration: none; opacity: 0.8;">🇫🇷 Français</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Section -->
+        <section class="demo-section">
+            <div class="container">
+                <h2>See It In Action</h2>
+                <p>Try asking questions like:</p>
+                <div class="sample-questions">
+                    <div class="question-card" onclick="askSample('How to reset my email password?')">
+                        "How to reset my email password?"
+                    </div>
+                    <div class="question-card" onclick="askSample('Why join Infomaniak?')">
+                        "Why join Infomaniak?"
+                    </div>
+                    <div class="question-card" onclick="askSample('How to configure email on my phone?')">
+                        "How to configure email on my phone?"
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="integration-section">
+            <div class="container">
+                <h2>Easy Integration</h2>
+                <p>Embed our chatbot on any website with just a few lines of code</p>
+                <div class="code-preview">
+                    <code>&lt;script src="infomaniak-chatbot.js"&gt;&lt;/script&gt;</code>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chat Plugin (Initially Hidden) -->
+    <div id="chat-plugin" class="chat-plugin">
+        <div class="chat-header">
+            <span>Infomaniak Assistant</span>
+            <button onclick="closeChatPlugin()" class="close-btn">✕</button>
+        </div>
+        <div class="chat-messages" id="plugin-messages">
+            <div class="bot-message">
+                <div class="message-bubble bot">
+                    👋 Hi! I'm here to help with Infomaniak questions. What would you like to know?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="plugin-input" placeholder="Type your question..." onkeypress="handlePluginEnter(event)">
+            <button onclick="sendPluginMessage()" class="send-btn">Send</button>
+        </div>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button id="chat-float-btn" class="chat-float-btn" onclick="openChatPlugin()">
+        💬
+    </button>
+
+    <script src="{{ url_for('static', filename='chat-plugin.js') }}"></script>
+</body>
+</html>

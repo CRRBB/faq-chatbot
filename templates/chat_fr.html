@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Assistant FAQ Infomaniak</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-page">
+        <!-- Chat Header -->
+        <header class="chat-page-header">
+            <div class="header-content">
+                <a href="/fr" class="back-link">← Retour à l'accueil</a>
+                <h1>🤖 Assistant FAQ Infomaniak</h1>
+                <div class="status">
+                    <span class="status-dot online"></span>
+                    <span>En ligne</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message-group">
+                    <div class="bot-message">
+                        <div class="message-bubble bot">
+                            👋 Bienvenue ! Je suis votre Assistant FAQ Infomaniak. Je peux vous aider avec :
+                            <br><br>
+                            • Problèmes de mot de passe et de compte
+                            <br>• Configuration d'email
+                            <br>• Questions de facturation
+                            <br>• Support technique
+                            <br><br>
+                            Posez-moi vos questions en français ou en anglais !
+                        </div>
+                        <div class="message-time">À l'instant</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input">
+                    <input type="text" 
+                           id="message-input" 
+                           placeholder="Tapez votre question ici..." 
+                           onkeypress="handleEnter(event)"
+                           autocomplete="off">
+                    <button id="send-button" onclick="sendMessage()" class="send-btn">
+                        <span class="send-icon">→</span>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <small>Appuyez sur Entrée pour envoyer • Supporte le français et l'anglais</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>

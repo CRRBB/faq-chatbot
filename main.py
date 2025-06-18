@@ -1,28 +1,55 @@
-print("Hello! I'm learning to build an FAQ bot")
+from flask import Flask, render_template, request, jsonify
+from bot_engine import BotEngine
 
-bot_name ="SmartFAQ Assisstant"
-version = 1.0
-is_learning = True
+app = Flask(__name__)
 
-print(f"Bot name: {bot_name}")
-print(f"Version: {version}")
-print(f"Am I learning ? {is_learning}")
+# Create bot instance
+bot = BotEngine()
+bot.load_faq_data('data/faqs.json')
 
-user_question = "How do I reset my password ?"
-confidence_score = 85.5
-faq_count = 0
-faqs_loaded = False
+@app.route('/')
+def homepage():
+    """English homepage"""
+    return render_template('homepage.html', lang='en')
 
-print(f"Question: {user_question}")
-print(f"Confidence: {confidence_score}")
-print(f"FAQ count : {faq_count}")
-print(f"FAQs loaded : {faqs_loaded}")
+@app.route('/fr')
+def homepage_fr():
+    """French homepage"""
+    return render_template('homepage_fr.html', lang='fr')
 
-faq_topics = ["Password Reset", "Email Setup", "Billing Questions", "Technical Support"]
-faq_urls = []
+@app.route('/chat')
+def chat_page():
+    """English chat page"""
+    return render_template('chat.html', lang='en')
 
-print("Abailable FAQ topics:")
-for topic in faq_topics:
-    print(f"- {topic}")
+@app.route('/chat/fr')
+def chat_page_fr():
+    """French chat page"""
+    return render_template('chat_fr.html', lang='fr')
 
-print(f"Number of topics: {len(faq_topics)}")
+@app.route('/api/ask', methods=['POST'])
+def api_ask():
+    """API endpoint for chatbot - returns JSON"""
+    data = request.get_json()
+    user_question = data.get('question', '')
+    
+    if not user_question:
+        return jsonify({'error': 'No question provided'}), 400
+    
+    # Use your existing bot logic
+    result = bot.get_answer(user_question)
+    
+    return jsonify({
+        'question': user_question,
+        'response': result['response'],
+        'matches': result['matches'],
+        'language': result['language']
+    })
+
+@app.route('/demo')
+def demo_page():
+    """Demo page showing plugin integration"""
+    return render_template('demo.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -69,7 +69,7 @@ class BotEngine:
 
         # Sort by score (highest first) and filter by minimum threshold
         matches.sort(key=lambda x: x["score"], reverse=True)
-        good_matches = [match for match in matches if match["score"] >= 70]
+        good_matches = [match for match in matches if match["score"] >= 65]
         return good_matches[:num_results]
     
     

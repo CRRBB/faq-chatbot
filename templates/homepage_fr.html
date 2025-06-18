@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant FAQ Infomaniak</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="homepage">
+        <!-- Header Section -->
+        <header class="hero">
+            <div class="container">
+                <h1>🤖 Assistant FAQ Infomaniak</h1>
+                <p class="tagline">Obtenez des réponses instantanées à vos questions sur les services Infomaniak</p>
+                <div class="features">
+                    <span class="feature">✅ Support Bilingue</span>
+                    <span class="feature">✅ Disponible 24h/7j</span>
+                    <span class="feature">✅ Réponses Instantanées</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="/chat/fr" class="btn-primary">Essayer le Chat Complet</a>
+                    <button onclick="openChatPlugin()" class="btn-secondary">Démo du Plugin</button>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="/" style="color: white; text-decoration: none; opacity: 0.8;">🇬🇧 English</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Demo Section -->
+        <section class="demo-section">
+            <div class="container">
+                <h2>Voyez-le en Action</h2>
+                <p>Essayez de poser des questions comme :</p>
+                <div class="sample-questions">
+                    <div class="question-card" onclick="askSample('Comment réinitialiser mon mot de passe email ?')">
+                        "Comment réinitialiser mon mot de passe email ?"
+                    </div>
+                    <div class="question-card" onclick="askSample('Pourquoi rejoindre Infomaniak ?')">
+                        "Pourquoi rejoindre Infomaniak ?"
+                    </div>
+                    <div class="question-card" onclick="askSample('Comment configurer l\'email sur mon téléphone ?')">
+                        "Comment configurer l'email sur mon téléphone ?"
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="integration-section">
+            <div class="container">
+                <h2>Intégration Facile</h2>
+                <p>Intégrez notre chatbot sur n'importe quel site web avec quelques lignes de code</p>
+                <div class="code-preview">
+                    <code>&lt;script src="infomaniak-chatbot.js"&gt;&lt;/script&gt;</code>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chat Plugin (Initially Hidden) -->
+    <div id="chat-plugin" class="chat-plugin">
+        <div class="chat-header">
+            <span>Assistant Infomaniak</span>
+            <button onclick="closeChatPlugin()" class="close-btn">✕</button>
+        </div>
+        <div class="chat-messages" id="plugin-messages">
+            <div class="bot-message">
+                <div class="message-bubble bot">
+                    👋 Salut ! Je suis là pour vous aider avec vos questions Infomaniak. Que souhaitez-vous savoir ?
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="plugin-input" placeholder="Tapez votre question..." onkeypress="handlePluginEnter(event)">
+            <button onclick="sendPluginMessage()" class="send-btn">Envoyer</button>
+        </div>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button id="chat-float-btn" class="chat-float-btn" onclick="openChatPlugin()">
+        💬
+    </button>
+
+    <script src="{{ url_for('static', filename='chat-plugin.js') }}"></script>
+</body>
+</html>

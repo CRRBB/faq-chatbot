@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infomaniak FAQ Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Infomaniak FAQ Assistant</h1>
+            <p>Ask me anything about Infomaniak services!</p>
+        </header>
+        
+        <main>
+            <form action="/ask" method="POST" class="question-form">
+                <div class="input-group">
+                    <label for="question">Your Question:</label>
+                    <input type="text" 
+                           id="question" 
+                           name="question" 
+                           placeholder="e.g., How do I reset my password?"
+                           required>
+                </div>
+                <button type="submit" class="ask-button">Ask Question</button>
+            </form>
+        </main>
+        
+        <footer>
+            <p>Supports English and French questions</p>
+        </footer>
+    </div>
+</body>
+</html>
