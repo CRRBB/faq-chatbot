@@ -44,7 +44,28 @@ class BotEngine:
             return "english"
         else:
             return "french"
+        
 
+    def detect_answer_language(self, text):
+        """Detect if an answer is in French or English"""
+        text = text.lower()
+        
+        french_indicators = [
+            "vous", "votre", "vos", "dans", "avec", "pour", "chez", "email", 
+            "mot", "passe", "connexion", "compte", "service", "configuration",
+            "sélectionnez", "cliquez", "sauvegardez", "téléchargez"
+        ]
+        
+        english_indicators = [
+            "you", "your", "with", "for", "email", "password", "account", 
+            "service", "configuration", "select", "click", "save", "download",
+            "login", "setup", "connect"
+        ]
+        
+        french_count = sum(1 for word in french_indicators if word in text)
+        english_count = sum(1 for word in english_indicators if word in text)
+        
+        return "french" if french_count > english_count else "english"
 
     def find_best_matches(self, user_question, num_results=3):
         if not self.faq_data:
@@ -80,6 +101,19 @@ class BotEngine:
         # Find best matches
         matches = self.find_best_matches(user_question)
         
+        # Filter matches by detected language to avoid duplicates
+        if matches:
+            filtered_matches = []
+            for match in matches:
+                answer_language = self.detect_answer_language(match['answer'])
+                # Only include matches that are in the same language as the question
+                if answer_language == language:
+                    filtered_matches.append(match)
+            
+            # If we have filtered matches, use them; otherwise fall back to all matches
+            if filtered_matches:
+                matches = filtered_matches
+        
         # Format response
         if not matches:
             if language == "french":
@@ -94,7 +128,7 @@ class BotEngine:
             }
 
         response_msg = f"I found {len(matches)} relevant answer(s):" if language == "english" else f"J'ai trouvé {len(matches)} réponse(s) pertinente(s):"
-    
+
         return {
             "language": language,
             "response": response_msg,
